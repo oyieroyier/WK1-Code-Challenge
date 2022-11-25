@@ -17,39 +17,39 @@ function lessNssfDeductions(grossPay) {
 
 function lessNhifDeductions(taxablePay) {
 	if (taxablePay < 6000) {
-		return taxablePay - 150;
+		return taxablePay - 150 * 0.85;
 	} else if (taxablePay < 8000) {
-		return taxablePay - 300;
+		return taxablePay - 300 * 0.85;
 	} else if (taxablePay < 12000) {
-		return taxablePay - 400;
+		return taxablePay - 400 * 0.85;
 	} else if (taxablePay < 15000) {
-		return taxablePay - 500;
+		return taxablePay - 500 * 0.85;
 	} else if (taxablePay < 20000) {
-		return taxablePay - 600;
+		return taxablePay - 600 * 0.85;
 	} else if (taxablePay < 25000) {
-		return taxablePay - 750;
+		return taxablePay - 750 * 0.85;
 	} else if (taxablePay < 30000) {
-		return taxablePay - 850;
+		return taxablePay - 850 * 0.85;
 	} else if (taxablePay < 35000) {
-		return taxablePay - 900;
+		return taxablePay - 900 * 0.85;
 	} else if (taxablePay < 40000) {
-		return taxablePay - 950;
+		return taxablePay - 950 * 0.85;
 	} else if (taxablePay < 45000) {
-		return taxablePay - 1000;
+		return taxablePay - 1000 * 0.85;
 	} else if (taxablePay < 50000) {
-		return taxablePay - 1100;
+		return taxablePay - 1100 * 0.85;
 	} else if (taxablePay < 60000) {
-		return taxablePay - 1200;
+		return taxablePay - 1200 * 0.85;
 	} else if (taxablePay < 70000) {
-		return taxablePay - 1300;
+		return taxablePay - 1300 * 0.85;
 	} else if (taxablePay < 80000) {
-		return taxablePay - 1400;
+		return taxablePay - 1400 * 0.85;
 	} else if (taxablePay < 90000) {
-		return taxablePay - 1500;
+		return taxablePay - 1500 * 0.85;
 	} else if (taxablePay < 100000) {
-		return taxablePay - 1600;
+		return taxablePay - 1600 * 0.85;
 	} else if (taxablePay >= 100000) {
-		return taxablePay - 1700;
+		return taxablePay - 1700 * 0.85;
 	}
 }
 // console.log(lessNhifDeductions(28920));
