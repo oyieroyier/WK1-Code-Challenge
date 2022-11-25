@@ -1,11 +1,12 @@
 // Taxable income calculation. Taxable income is the Gross Pay less NSSF contributions.
 function lessNssfDeductions(grossPay) {
-	if (grossPay <= 20000) {
-		return grossPay - (grossPay * 0.06);
-	} else if (grossPay > 20000) {
-		return grossPay - 18000 * 0.06;
+	if (grossPay <= 19999) {
+		return grossPay - grossPay * 0.06;
+	} else if (grossPay >= 20000) {
+		return grossPay - 1080;
 	}
 }
+// console.log(lessNssfDeductions(30000));
 
 /* 
 	This next function takes one's taxable Income (calculated above) and deducts NHIF contributions.
@@ -47,12 +48,11 @@ function lessNhifDeductions(taxablePay) {
 		return taxablePay - 1500;
 	} else if (taxablePay < 100000) {
 		return taxablePay - 1600;
-	} else if (taxablePay > 100000) {
+	} else if (taxablePay >= 100000) {
 		return taxablePay - 1700;
 	}
 }
-
-lessNhifDeductions(lessNssfDeductions(30000));
+// console.log(lessNhifDeductions(28920));
 
 /* 
 	What remains after the NHIF and NSSF deductions is what is subjected to the tax regime.
@@ -65,22 +65,14 @@ function lessPayeAndRelief(taxableIncome) {
 		return taxableIncome - taxableIncome * 0.1 + 2400;
 	} else if (taxableIncome > 24000) {
 		if (taxableIncome <= 32333) {
-			return (
-				taxableIncome - (24000 * 0.1 + (taxableIncome - 24000) * 0.25) + 2400
-			);
+			return taxableIncome - (taxableIncome - 24000) * 0.25;
 		} else if (taxableIncome > 32333) {
-			return (
-				taxableIncome -
-				((taxableIncome - 24000) * 0.1 +
-					8333 * 0.25 +
-					(taxableIncome - 32333) * 0.3) +
-				2400
-			);
+			return taxableIncome - (8333 * 0.25 + (taxableIncome - 32333) * 0.3);
 		}
 	}
 }
-
+// console.log(lessPayeAndRelief(28070));
 const netPay = lessPayeAndRelief(
-	lessNhifDeductions(lessNssfDeductions(20000))
+	lessNhifDeductions(lessNssfDeductions(1000000))
 );
 console.log(netPay);
