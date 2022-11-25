@@ -72,7 +72,5 @@ function lessPayeAndRelief(taxableIncome) {
 	}
 }
 // console.log(lessPayeAndRelief(28070));
-const netPay = lessPayeAndRelief(
-	lessNhifDeductions(lessNssfDeductions(72500))
-);
+const netPay = lessPayeAndRelief(lessNhifDeductions(lessNssfDeductions(72500)));
 console.log("Net Pay: KES", netPay);

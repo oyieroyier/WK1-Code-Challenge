@@ -1,11 +1,11 @@
-# # WK1-Code-Challenge
+# WK1-Code-Challenge
 
 This is the first Coding challenge for Moringa School's **sdf-ft-03-hybrid** cohort.
 
 The challenge has three parts:
-$1. Challenge 1: Student Grade Generator (Toy Problem)
+1. Challenge 1: Student Grade Generator (Toy Problem)
 2. Challenge 2: Speed Detector (Toy Problem)
-3. Challenge 3: Net Salary Calculator (Toy Problem)$
+3. Challenge 3: Net Salary Calculator (Toy Problem)
 
 ## Challenge 1: Student Grade Generator (Toy Problem)
 
