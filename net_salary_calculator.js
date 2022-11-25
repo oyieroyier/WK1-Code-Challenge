@@ -1,4 +1,19 @@
-function nhifDeductions(taxablePay) {
+// Taxable income calculation. Taxable income is the Gross Pay less NSSF contributions.
+function lessNssfDeductions(grossPay) {
+	if (grossPay < 20000) {
+		return grossPay - grossPay * 0.06;
+	} else if (grossPay > 20000) {
+		return grossPay - 18000 * 0.06;
+	}
+}
+
+/* 
+	This next function takes one's taxable Income (calculated above) and deducts NHIF contributions.
+	To calculate what one remains with after both deductions, simply chain the functions.
+	Use the lessNssfDeductions as an argument to the lessNhifDeductions
+*/
+
+function lessNhifDeductions(taxablePay) {
 	if (taxablePay < 6000) {
 		return taxablePay - 150;
 	} else if (taxablePay < 8000) {
@@ -36,36 +51,35 @@ function nhifDeductions(taxablePay) {
 	}
 }
 
-function nssfDeductions(grossPay) {
-	if (grossPay < 20000) {
-		return grossPay - grossPay * 0.06;
-	} else if (grossPay > 20000) {
-		return grossPay - 18000 * 0.06;
-	}
-}
+lessNhifDeductions(lessNssfDeductions(30000));
 
-function taxableIncome() {
-	return nssfDeductions(30000);
-}
+/* 
+	What remains after the NHIF and NSSF deductions is what is subjected to the tax regime.
+	This function calculates what remains of one's pay after it has been run through the relevant tax bands.
+	The function also factors in a KES 2,400 tax relief that applies to Kenyans.
+*/
 
-function paye(taxableIncome) {
+function lessPayeAndRelief(taxableIncome) {
 	if (taxableIncome <= 24000) {
-		return taxableIncome * 0.1;
+		return taxableIncome - taxableIncome * 0.1 + 2400;
 	} else if (taxableIncome > 24000) {
 		if (taxableIncome <= 32333) {
-			return 24000 * 0.1 + (taxableIncome - 24000) * 0.25;
+			return (
+				taxableIncome - (24000 * 0.1 + (taxableIncome - 24000) * 0.25) + 2400
+			);
 		} else if (taxableIncome > 32333) {
 			return (
-				(taxableIncome - 24000) * 0.1 +
-				8333 * 0.25 +
-				(taxableIncome - 32333) * 0.3
+				taxableIncome -
+				((taxableIncome - 24000) * 0.1 +
+					8333 * 0.25 +
+					(taxableIncome - 32333) * 0.3) +
+				2400
 			);
 		}
 	}
 }
 
-function relief(paye) {
-	return paye - 2400
-}
-
-console.log(taxableIncome());
+const netPay = lessPayeAndRelief(
+	lessNhifDeductions(lessNssfDeductions(100000))
+);
+console.log(netPay);
