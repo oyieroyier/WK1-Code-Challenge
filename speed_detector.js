@@ -14,6 +14,8 @@ function speedDetector(speed) {
 			let counter = 0;
 			/*
 				Use the modulus operator to determine how fast above the speed limit the driver is moving.
+				So if speed % 70 returns 8, it means the driver is moving at 8km/h above the speed limit.
+				Increase the iterator value by 5 in each iteration.
 			*/
 			for (let i = 0; i < speed % 70; i += 5) {
 				counter++;
