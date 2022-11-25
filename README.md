@@ -33,6 +33,6 @@ Otherwise, for every 5 km/s above the speed limit (70), it should give the drive
 Write a program whose major task is to calculate an individual’s Net Salary by getting the inputs of basic salary and benefits.
 Calculate the PAYE (i.e. Tax), NHIFDeductions, NSSFDeductions, gross salary, and net salary.
 
-NB: Use KRA, NHIF, and NSSF values provided in the link [link] https://www.aren.co.ke/payroll/taxrates.ht below.  
+NB: Use KRA, NHIF, and NSSF values provided in the link [link] (https://www.aren.co.ke/payroll/taxrates.ht LINK) below.  
 
 https://www.kra.go.ke/en/individual/calculate-tax/calculating-tax/paye
