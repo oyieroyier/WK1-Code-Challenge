@@ -29,6 +29,8 @@ Otherwise, for every 5 km/s above the speed limit (70), it should give the drive
 
 **For example, if the speed is 80, it should print: “Points: 2”. If the driver gets more than 12 points, the function should print: “License suspended”.**
 
+This is also an intriguing challenge that I implemented using a combination of functions, conditionals and iterating loops.
+
 ## Challenge 3: Net Salary Calculator (Toy Problem)
 Write a program whose major task is to calculate an individual’s Net Salary by getting the inputs of basic salary and benefits.
 Calculate the PAYE (i.e. Tax), NHIFDeductions, NSSFDeductions, gross salary, and net salary.
@@ -38,7 +40,7 @@ NB: Use KRA, NHIF, and NSSF values provided in the links [HERE](https://www.aren
 This was the toughest and most interesting of the challenges and I implemented it using functions calling other functions to arrive at the answer.
 I also understood and appreciated the importance of scoping because every time I needed to make a change in my code, all I had to do was edit the values within a function and not touch any other aspect of the code.
 
-## Author - Bob Oyier:
+## Author - Bob Oyier.
 
 ## ISC
 
