@@ -38,7 +38,7 @@ NB: Use KRA, NHIF, and NSSF values provided in the links [HERE](https://www.aren
 This was the toughest and most interesting of the challenges and I implemented it using functions calling other functions to arrive at the answer.
 I also understood and appreciated the importance of scoping because every time I needed to make a change in my code, all I had to do was edit the values within a function and not touch any other aspect of the code.
 
-##Author - Bob Oyier:
+## Author - Bob Oyier:
 
 ## ISC
 
