@@ -1,7 +1,7 @@
 // Taxable income calculation. Taxable income is the Gross Pay less NSSF contributions.
 function lessNssfDeductions(grossPay) {
-	if (grossPay < 20000) {
-		return grossPay - grossPay * 0.06;
+	if (grossPay <= 20000) {
+		return grossPay - (grossPay * 0.06);
 	} else if (grossPay > 20000) {
 		return grossPay - 18000 * 0.06;
 	}
@@ -11,6 +11,7 @@ function lessNssfDeductions(grossPay) {
 	This next function takes one's taxable Income (calculated above) and deducts NHIF contributions.
 	To calculate what one remains with after both deductions, simply chain the functions.
 	Use the lessNssfDeductions as an argument to the lessNhifDeductions
+	This function also applies a 15% insurance relief on NHIF contributions.
 */
 
 function lessNhifDeductions(taxablePay) {
@@ -80,6 +81,6 @@ function lessPayeAndRelief(taxableIncome) {
 }
 
 const netPay = lessPayeAndRelief(
-	lessNhifDeductions(lessNssfDeductions(100000))
+	lessNhifDeductions(lessNssfDeductions(20000))
 );
 console.log(netPay);
