@@ -33,6 +33,15 @@ Otherwise, for every 5 km/s above the speed limit (70), it should give the drive
 Write a program whose major task is to calculate an individual’s Net Salary by getting the inputs of basic salary and benefits.
 Calculate the PAYE (i.e. Tax), NHIFDeductions, NSSFDeductions, gross salary, and net salary.
 
-NB: Use KRA, NHIF, and NSSF values provided in the link [link] (https://www.aren.co.ke/payroll/taxrates.ht "LINK") below.  
+NB: Use KRA, NHIF, and NSSF values provided in the links [HERE](https://www.aren.co.ke/payroll/taxrates.ht "LINK") and [HERE](https://www.kra.go.ke/en/individual/calculate-tax/calculating-tax/paye)  
 
-https://www.kra.go.ke/en/individual/calculate-tax/calculating-tax/paye
+This was the toughest and most interesting of the challenges and I implemented it using functions calling other functions to arrive at the answer.
+I also understood and appreciated the importance of scoping because every time I needed to make a change in my code, all I had to do was edit the values within a function and not touch any other aspect of the code.
+
+##Author - Bob Oyier:
+
+## ISC
+
+### ISC License (ISC)
+[![License: ICL](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)  
+`[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`
