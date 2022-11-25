@@ -4,13 +4,13 @@ function speedDetector(speed) {
 		console.log("Ok");
 	} else if (speed > 70) {
 		/* 	
-			Let's first ensure that the license is always suspended if speed goes over 140km/h
-			Because 140 % 70 == 0 and we don't want our counter to reset.
+			Let's first ensure that the license is always suspended if speed reaches or goes beyond 140km/h
+			Because 140 % 70 === 0 and we don't want our counter to be reset.
 		*/
 		if (speed >= 140) {
 			console.log("License suspended.");
 		} else {
-			// Let's have a counter variable to keep track of out iterations.
+			// Let's have a counter variable to keep track of our iterations.
 			let counter = 0;
 			/*
 				Use the modulus operator to determine how fast above the speed limit the driver is moving.
