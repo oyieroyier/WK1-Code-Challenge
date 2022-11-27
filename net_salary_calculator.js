@@ -1,8 +1,8 @@
 // Taxable income calculation. Taxable income is the Gross Pay less NSSF contributions.
 function lessNssfDeductions(grossPay) {
-	if (grossPay <= 19999) {
+	if (grossPay < 18000) {
 		return grossPay - grossPay * 0.06;
-	} else if (grossPay >= 20000) {
+	} else if (grossPay >= 18000) {
 		return grossPay - 1080;
 	}
 }
