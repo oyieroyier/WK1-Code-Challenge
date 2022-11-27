@@ -1,18 +1,34 @@
 // Taxable income calculation. Taxable income is the Gross Pay less NSSF contributions.
+
+/* 
+	grossPay = basic salary + benefits
+	This function takes the basic pay and benefits/allowances as arguments and returns a gross pay.
+*/
+function grossPay(basicPay, benefits) {
+	return basicPay + benefits;
+}
+// console.log(grossPay(20000, 14000))
+
+/*
+	Statutory NSSF Fund contributions is deducted from one's gross pay.
+	This function will take the gross pay and compute the rates applied by NSSF to deduct the social
+	security fund contribution.
+*/
 function lessNssfDeductions(grossPay) {
-	if (grossPay < 18000) {
+	if (grossPay <= 18000) {
 		return grossPay - grossPay * 0.06;
-	} else if (grossPay >= 18000) {
+	} else if (grossPay > 18000) {
 		return grossPay - 1080;
 	}
 }
 // console.log(lessNssfDeductions(30000));
 
 /* 
-	This next function takes one's taxable Income (calculated above) and deducts NHIF contributions.
+	This next function takes the balance after deduction of NSSF (calculated above) and deducts NHIF contributions
+	based on what is left of the pay.
+	This function also applies a 15% insurance relief on NHIF contributions.
 	To calculate what one remains with after both deductions, simply chain the functions.
 	Use the lessNssfDeductions as an argument to the lessNhifDeductions
-	This function also applies a 15% insurance relief on NHIF contributions.
 */
 
 function lessNhifDeductions(taxablePay) {
@@ -72,5 +88,24 @@ function lessPayeAndRelief(taxableIncome) {
 	}
 }
 // console.log(lessPayeAndRelief(28070));
-const netPay = lessPayeAndRelief(lessNhifDeductions(lessNssfDeductions(19999)));
+
+// Net Pay = Gross Pay less NSSF Deductions less NHIF Deductions less TAX after relief.
+/*
+	Chaining these functions as shown below, where the value returned from one function is used
+	as an argument to the subsequent function calculates the net pay.
+
+	SUMMARY:
+		1. A user enters their basic salary and pay as arguments to the grossPay function.
+		2. The value returned from the grossPay function is passed on as an argument in the
+			lessNssfDeductions function for computation of social security deductons.
+		3. The value returned from the lessNssfDeductions is passed on to the
+			lessNhifDeductions function for computation of health insurance deductions.
+		4. The value returned from the lessNhifDeductions function is passed on to the
+			lessPayeAndRelief function for computation of tax.
+		5. The subsequent result is the net pay for the individual.
+*/
+
+const netPay = lessPayeAndRelief(
+	lessNhifDeductions(lessNssfDeductions(grossPay(20000, 14000)))
+);
 console.log("Net Pay: KES", netPay);
