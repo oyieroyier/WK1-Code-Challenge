@@ -95,17 +95,22 @@ function lessPayeAndRelief(taxableIncome) {
 	as an argument to the subsequent function calculates the net pay.
 
 	SUMMARY:
-		1. A user enters their basic salary and pay as arguments to the grossPay function.
+		1. A user enters their basic salary and allowances/benefits as arguments to the grossPay function.
+
 		2. The value returned from the grossPay function is passed on as an argument in the
 			lessNssfDeductions function for computation of social security deductons.
+
 		3. The value returned from the lessNssfDeductions is passed on to the
 			lessNhifDeductions function for computation of health insurance deductions.
+
 		4. The value returned from the lessNhifDeductions function is passed on to the
 			lessPayeAndRelief function for computation of tax.
+
 		5. The subsequent result is the net pay for the individual.
 */
 
 const netPay = lessPayeAndRelief(
-	lessNhifDeductions(lessNssfDeductions(grossPay(20000, 14000)))
+	lessNhifDeductions(lessNssfDeductions(grossPay(20000, 5000)))
 );
+
 console.log("Net Pay: KES", netPay);
