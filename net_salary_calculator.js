@@ -15,11 +15,12 @@ function grossPay(basicPay, benefits = 0) {
 	This function will take the gross pay and compute the rates applied by NSSF to deduct the social
 	security fund contribution.
 */
+
 function lessNssfDeductions(grossPay) {
 	if (grossPay <= 6000) {
 		return grossPay - grossPay * 0.06;
-	} else if (grossPay > 18000) {
-		return grossPay - 1080;
+	} else if (grossPay > 6000) {
+		return (grossPay - ((grossPay - 6000) * 0.06))
 	}
 }
 // console.log(lessNssfDeductions(30000));
@@ -79,7 +80,7 @@ function lessNhifDeductions(taxablePay) {
 
 function lessPayeAndRelief(taxableIncome) {
 	if (taxableIncome <= 24000) {
-		return taxableIncome - taxableIncome * 0.1 + 2400;
+		return taxableIncome;
 	} else if (taxableIncome > 24000) {
 		if (taxableIncome <= 32333) {
 			return taxableIncome - (taxableIncome - 24000) * 0.25;
@@ -116,7 +117,7 @@ function lessPayeAndRelief(taxableIncome) {
 	to return the net pay.
 */
 const netPay = lessPayeAndRelief(
-	lessNhifDeductions(lessNssfDeductions(grossPay(100000)))
+	lessNhifDeductions(lessNssfDeductions(grossPay(56000)))
 );
 
 console.log("Net Pay: KES", netPay);
