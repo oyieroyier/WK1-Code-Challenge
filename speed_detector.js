@@ -27,4 +27,4 @@ function speedDetector(speed) {
 	}
 }
 
-speedDetector(131);
+speedDetector(speed);
