@@ -3,7 +3,7 @@
 /* 
 	grossPay = basic salary + benefits
 	This function takes the basic pay and benefits/allowances as arguments and returns a gross pay.
-	In default of benefits from the employer, the benefits parameter is set to 0.
+	In default
 */
 function grossPay(basicPay, benefits = 0) {
 	return basicPay + benefits;
@@ -16,11 +16,8 @@ function grossPay(basicPay, benefits = 0) {
 	security fund contribution.
 */
 function lessNssfDeductions(grossPay) {
-	if (grossPay <= 18000) {
-		if (grossPay <= 3000) {
-			return grossPay - 0;
-		}
-		else return grossPay - grossPay * 0.06;
+	if (grossPay <= 6000) {
+		return grossPay - grossPay * 0.06;
 	} else if (grossPay > 18000) {
 		return grossPay - 1080;
 	}
@@ -114,13 +111,12 @@ function lessPayeAndRelief(taxableIncome) {
 */
 
 /*
-	Line 122 computes the netPay.
-
+	Line 117 tests the code functionality.
 	Replace the parameters "basicPay" and "benefits" in the grossPay function with actual figures
 	to return the net pay.
 */
 const netPay = lessPayeAndRelief(
-	lessNhifDeductions(lessNssfDeductions(grossPay(basicPay, benefits)))
+	lessNhifDeductions(lessNssfDeductions(grossPay(100000)))
 );
 
 console.log("Net Pay: KES", netPay);
