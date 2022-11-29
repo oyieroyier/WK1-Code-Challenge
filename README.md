@@ -115,7 +115,7 @@ Running the application is very straight forward. You can use the following step
 
 - Run the speed_detector.js application
 
-      npm net_salary_calculator.js
+      npm start net_salary_calculator.js
 
 ## Authors
 
