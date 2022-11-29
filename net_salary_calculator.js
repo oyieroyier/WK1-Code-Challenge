@@ -117,7 +117,7 @@ function lessPayeAndRelief(taxableIncome) {
 	to return the net pay.
 */
 const netPay = lessPayeAndRelief(
-	lessNhifDeductions(lessNssfDeductions(grossPay(56000)))
+	lessNhifDeductions(lessNssfDeductions(grossPay(basicPay, benefits)))
 );
 
 console.log("Net Pay: KES", netPay);
