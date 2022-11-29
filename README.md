@@ -83,13 +83,13 @@ Running the application is very straight forward. You can use the following step
 
 - Install required dependencies from npm
 
-      **npm install**
+      npm install
 
 - On line 30, replace the parameter *speed* paramete in the function with any number.
 
 - Run the speed_detector.js application
 
-      **npm start speed_detector.js**
+      npm start speed_detector.js
 
 ## Challenge 3: Net Salary Calculator (Toy Problem)
 ### Description
@@ -109,13 +109,13 @@ Running the application is very straight forward. You can use the following step
 
 - Install required dependencies from npm
 
-      **npm install**
+      npm install
 
 - On line 120, replace the parameters *basicPay* and *benefits* in the function with any numbe.
 
 - Run the speed_detector.js application
 
-      **npm net_salary_calculator.js**
+      npm net_salary_calculator.js
 
 ## Authors
 
