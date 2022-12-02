@@ -85,7 +85,7 @@ Running the application is very straight forward. You can use the following step
 
       npm install
 
-- On line 30, replace the parameter *speed* paramete in the function with any number.
+- On line 30, replace the parameter *speed* in the function with any number.
 
 - Run the speed_detector.js application
 
